@@ -55,26 +55,6 @@ builder.Services.AddOpenTelemetry()
         })
         .AddPrometheusExporter());
 
-/* builder.Logging.AddOpenTelemetry(options =>
-{
-    options
-        .SetResourceBuilder(
-            ResourceBuilder.CreateDefault()
-                .AddService(serviceName))
-        .AddConsoleExporter(options =>
-        {
-            options.Targets = ConsoleExporterOutputTargets.Console;
-        });
-});
-builder.Logging.AddJsonConsole(options =>
-{
-    options.IncludeScopes = true;
-    options.TimestampFormat = "yyyy-MM-ddTHH:mm:ss.fffZ";
-    options.UseUtcTimestamp = true;
-});
- */
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
