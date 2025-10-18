@@ -1,0 +1,74 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Dashboard for RollDice API - metrics, logs, traces",
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Forecast Requests",
+      "targets": [
+        {
+          "expr": "forecast_requests_total",
+          "legendFormat": "forecast_requests_total",
+          "refId": "A"
+        }
+      ],
+      "xaxis": {
+        "mode": "time"
+      }
+    },
+    {
+      "type": "graph",
+      "title": "Dice Rolls",
+      "targets": [
+        {
+          "expr": "dice_rolls_total",
+          "legendFormat": "dice_rolls_total",
+          "refId": "A"
+        }
+      ],
+      "xaxis": {
+        "mode": "time"
+      }
+    },
+    {
+      "type": "logs",
+      "title": "Recent Logs (Loki)",
+      "datasource": "Loki",
+      "targets": [
+        {
+          "expr": "{job=\"dotnet-app\"}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "trace",
+      "title": "Jaeger Traces",
+      "datasource": "Jaeger",
+      "targets": [
+        {
+          "query": "",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 37,
+  "version": 1,
+  "refresh": "5s"
+}
