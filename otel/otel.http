@@ -1,0 +1,21 @@
+@host = http://localhost:8080
+
+### Weather forecast
+GET {{host}}/weatherforecast
+Accept: application/json
+
+### Roll dice (anonymous player)
+GET {{host}}/rolldice
+Accept: application/json
+
+### Roll dice (named player1)
+GET {{host}}/rolldice/Player1
+Accept: application/json
+
+### Roll dice (named player2)
+GET {{host}}/rolldice/Player2
+Accept: application/json
+
+### Roll dice (named player3)
+GET {{host}}/rolldice/Player3
+Accept: application/json

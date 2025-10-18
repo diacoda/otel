@@ -1,0 +1,43 @@
+# ---- .NET build artifacts ----
+bin/
+obj/
+out/
+*.log
+*.vspscc
+*.vssscc
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code / Rider / IDEs
+.vscode/
+.idea/
+*.userprefs
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+logs/
+*.log
+
+# ---- Docker ----
+# Ignore container volumes, unless you want to track configs
+docker-data/
+*.pid
+*.sock
+
+# Prometheus / Loki / Grafana runtime data
+prometheus-data/
+loki-data/
+grafana-data/
+
+# ---- Configs (local, not versioned) ----
+prometheus.yml
+promtail-config.yml
+grafana/provisioning/datasources/datasources.yml
+
+# If you want to track provisioning dashboards, whitelist them like:
+#!grafana/provisioning/dashboards/
